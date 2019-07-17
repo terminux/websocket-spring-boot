@@ -1,0 +1,60 @@
+{
+  "properties": [
+    {
+      "name": "app.websocket.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "com.ugrong.framework.ws.config.WsProperties",
+      "defaultValue": "/websocket/server",
+      "description": "websocket的连接地址."
+    },
+    {
+      "name": "app.websocket.message-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.ugrong.framework.ws.config.WsProperties",
+      "defaultValue": "/app",
+      "description": "客户端给服务端发消息的地址的前缀."
+    },
+    {
+      "name": "app.websocket.message-suffix",
+      "type": "java.lang.String",
+      "sourceType": "com.ugrong.framework.ws.config.WsProperties",
+      "defaultValue": "/message",
+      "description": "客户端给服务端发消息的地址的后缀."
+    },
+    {
+      "name": "app.websocket.public-topic-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.ugrong.framework.ws.config.WsProperties",
+      "defaultValue": "/topic",
+      "description": "客户端接收服务端消息的主题前缀."
+    },
+    {
+      "name": "app.websocket.public-topic-suffix",
+      "type": "java.lang.String",
+      "sourceType": "com.ugrong.framework.ws.config.WsProperties",
+      "defaultValue": "/broadcast",
+      "description": "客户端接收服务端消息的主题后缀."
+    },
+    {
+      "name": "app.websocket.user-topic-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.ugrong.framework.ws.config.WsProperties",
+      "defaultValue": "/user",
+      "description": "给指定用户发送（一对一）消息的主题前缀."
+    },
+    {
+      "name": "app.websocket.user-topic-suffix",
+      "type": "java.lang.String",
+      "sourceType": "com.ugrong.framework.ws.config.WsProperties",
+      "defaultValue": "/queue",
+      "description": "给指定用户发送（一对一）消息的主题后缀."
+    },
+    {
+      "name": "app.websocket.principal-id-field-name",
+      "type": "java.lang.String",
+      "sourceType": "com.ugrong.framework.ws.config.WsProperties",
+      "defaultValue": "userId",
+      "description": "主体对象的id字段名."
+    }
+  ]
+}
