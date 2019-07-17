@@ -7,8 +7,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public enum WsEventType implements Serializable {
 
-    CONNECTED("建立连接"), DISCONNECT("断开连接"),
-    SUBSCRIBE("订阅"), UNSUBSCRIBE("取消订阅");
+    CONNECTED("建立连接"), DISCONNECT("断开连接");
 
     private final String desc;
 

@@ -5,6 +5,7 @@ import com.ugrong.framework.ws.model.WsMessage;
 import com.ugrong.framework.ws.service.WsMessageService;
 import com.ugrong.framework.ws.service.WsRouteService;
 import lombok.AllArgsConstructor;
+import org.springframework.scheduling.annotation.Async;
 
 import java.util.Date;
 
@@ -16,8 +17,11 @@ public class WsRouteServiceImpl implements WsRouteService {
     private final WsMessageService wsMessageService;
 
     @Override
+    @Async
     public void handleMessage(WsMessage message) {
-        message.setSendTime(new Date());
+        if (message.getSendTime() == null) {
+            message.setSendTime(new Date());
+        }
         wsMessageRouter.route(message, wsMessageService);
     }
 }

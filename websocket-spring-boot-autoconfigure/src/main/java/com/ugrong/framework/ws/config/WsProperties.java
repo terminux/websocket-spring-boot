@@ -53,4 +53,9 @@ public class WsProperties {
      * 主体对象的id字段名
      */
     private String principalIdFieldName = WsConstants.DEFAULT_WS_PRINCIPAL_ID_FIELD_NAME;
+
+    /**
+     * 系统用户id,推送消息时sender的值
+     */
+    private String systemUserId = WsConstants.DEFAULT_WS_SYSTEM_USER_ID;
 }

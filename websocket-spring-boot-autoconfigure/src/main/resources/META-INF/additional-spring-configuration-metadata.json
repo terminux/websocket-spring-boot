@@ -55,6 +55,13 @@
       "sourceType": "com.ugrong.framework.ws.config.WsProperties",
       "defaultValue": "userId",
       "description": "主体对象的id字段名."
+    },
+    {
+      "name": "app.websocket.system-user-id",
+      "type": "java.lang.String",
+      "sourceType": "com.ugrong.framework.ws.config.WsProperties",
+      "defaultValue": "Administrator",
+      "description": "系统用户id,推送消息时sender的值."
     }
   ]
 }

@@ -1,5 +1,6 @@
 package com.ugrong.framework.ws.autoconfigure;
 
+import com.ugrong.framework.ws.api.WsEventListener;
 import com.ugrong.framework.ws.api.WsMessageRouter;
 import com.ugrong.framework.ws.config.WsMessageBrokerConfig;
 import com.ugrong.framework.ws.config.WsProperties;
@@ -23,11 +24,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.core.MessageSendingOperations;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 
 @Configuration
 @ConditionalOnClass({MessageSendingOperations.class})
 @EnableConfigurationProperties(WsProperties.class)
+@EnableAsync
 @EnableWebSocketMessageBroker
 @AutoConfigureAfter(WebSocketMessagingAutoConfiguration.class)
 @ComponentScan(basePackages = {"com.ugrong.framework.ws.controller"})
@@ -83,10 +86,10 @@ public class WsAutoConfiguration {
         return new WsRouteServiceImpl(wsMessageRouter, wsMessageService);
     }
 
-//    @Bean
-//    @ConditionalOnMissingBean
-//    @ConditionalOnBean(WsRouteService.class)
-//    public WsMessageController wsMessageController(WsRouteService wsRouteService) {
-//        return new WsMessageControllerImpl(wsRouteService);
-//    }
+    @Bean
+    @ConditionalOnMissingBean
+    @ConditionalOnBean(WsRouteService.class)
+    public WsEventListener wsEventListener(WsProperties wsProperties, WsRouteService wsRouteService) {
+        return new WsEventListener(wsProperties, wsRouteService);
+    }
 }

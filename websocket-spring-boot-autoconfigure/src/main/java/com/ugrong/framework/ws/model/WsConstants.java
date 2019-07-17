@@ -21,4 +21,6 @@ public class WsConstants {
     public static final String DEFAULT_WS_USER_TOPIC_SUFFIX = "/queue";
 
     public static final String DEFAULT_WS_PRINCIPAL_ID_FIELD_NAME = "userId";
+
+    public static final String DEFAULT_WS_SYSTEM_USER_ID = "Administrator";
 }
